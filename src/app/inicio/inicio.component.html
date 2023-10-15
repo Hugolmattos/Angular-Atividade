@@ -1,4 +1,4 @@
-<<main>
+<main>
 
     <section id="section-banner">
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -28,62 +28,34 @@
 
     <h2>Jogos em Promoção</h2>
     <mat-grid-list cols="3">
-        <mat-grid-tile>
+        <mat-grid-tile *ngFor="let produto of produtos">
             <mat-card class="example-card">
-                <img mat-card-image src="./assets/img/jogo1.PNG" alt="Jogo 1">
+                <img mat-card-image src="./assets/img/{{produto.foto}}" alt="Jogo 1">
         
                 <mat-card-header>
-                  <mat-card-title>God of War Ragnarök</mat-card-title>
+                  <mat-card-title>{{produto.produto}}</mat-card-title>
                 </mat-card-header>
                 
                 <mat-card-content>
                   <p>
-                    Ragnarok está chegando. O fim dos tempos está próximo. Kratos e Atreus devem encontrar uma maneira de impedir o fim do mundo
+                    {{produto.descricao}}
                   </p>
                 </mat-card-content>
                 <mat-card-actions>
-                  <p>R$ 300,00</p>
+                  <p>{{produto.preco | currency : 'BRL'}}</p>
                   <button mat-button>Comprar</button>
                 </mat-card-actions>
               </mat-card>
         </mat-grid-tile>
-        <mat-grid-tile>
-            <mat-card class="example-card">
-                <img mat-card-image src="./assets/img/jogo2.PNG" alt="Jogo 2">
         
-                <mat-card-header>
-                  <mat-card-title>Homem-Aranha</mat-card-title>
-                </mat-card-header>
-                
-                <mat-card-content>
-                  <p>
-                    Vista o traje icônico e sinta-se como o herói aracnídeo com movimentos ágeis e poderes impressionantes. 
-                  </p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <p>R$ 200,00</p>
-                  <button mat-button>Comprar</button>
-                </mat-card-actions>
-              </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <mat-card class="example-card">
-                <img mat-card-image src="./assets/img/jogo3.PNG" alt="Jogo 3">
-        
-                <mat-card-header>
-                  <mat-card-title>The Witcher 3: Wild Hunt</mat-card-title>
-                </mat-card-header>
-                
-                <mat-card-content>
-                  <p>
-                    Aceite contratos para caçar monstros aterrorizantes que assolam aldeias e cidades. 
-                    Use suas habilidades de rastreamento para encontrar e enfrentar essas criaturas lendárias.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <p>R$ 100,00</p>
-                  <button mat-button>Comprar</button>
-                </mat-card-actions>
-              </mat-card>
-        </mat-grid-tile>
       </mat-grid-list>
+      
+
+       
+
+
+
+
+
+
+</main>
